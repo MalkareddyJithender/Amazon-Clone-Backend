@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const stripe = require('stripe')
                       ('sk_test_51Ips86SBiMWz47PPF8mVPWQ1CSyxnaZ6fyLSr2OE2JcSesqFx5JfWNpRhIwurErNVbWuQoqaot3az9Lx26lbRgbc00z37IDs07');
+//port
+const port = process.env.PORT || 3000;
 
 //express application configuration
 const app = express();
@@ -35,7 +37,7 @@ app.post('/payments/create',async (req,res) =>
 });
 
 //server is listening on 3000 port
-app.listen(3000,() =>
+app.listen(port,() =>
 {
-    console.log('server is up on port,',3000)
+    console.log('server is up on port,',port);
 });
