@@ -5,10 +5,10 @@ const stripe = require('stripe')
 //port
 const port = process.env.PORT || 3000;
 
-//express application configuration
+//express application configuration..
 const app = express();
 
-//middlewares
+//middlewares..
 app.use(express.json());
 app.use(cors({origin:true}));
 //api routes
