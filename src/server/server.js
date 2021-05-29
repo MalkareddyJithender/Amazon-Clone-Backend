@@ -19,8 +19,6 @@ app.get('/',(req,res) =>
 
 app.post('/payments/create',async (req,res) =>
 {
-    try
-    {
     const total = req.query.total;
     const paymentIntent = await stripe.paymentIntents.create({
         amount:total,
@@ -30,10 +28,7 @@ app.post('/payments/create',async (req,res) =>
     res.status(201).send({
         clientSecret:paymentIntent.client_secret
     });
-    }
-    catch(error){
-        res.status(400).send(error.message);
-    }
+
 });
 
 //server is listening on 3000 port
